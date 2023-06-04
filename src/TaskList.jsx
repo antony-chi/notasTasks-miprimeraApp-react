@@ -1,16 +1,5 @@
-import { tasks as data } from "./tasks"; //as data para cambair el nommbre
-import { useEffect, useState } from "react";
-
 //console.log(data);
-
-const TaskList = () => {
-  const [tasks, setTasks] = useState([]);
-
-  useEffect(() => {
-    //inicializamos el task o data que se renombre
-    setTasks(data);
-  }, []);
-
+const TaskList = ({ tasks }) => {
   if (tasks.length === 0) {
     return <h1>No hay tareas aun..</h1>;
   }
