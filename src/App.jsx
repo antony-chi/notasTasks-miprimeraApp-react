@@ -1,6 +1,6 @@
-import TaskForm from "./TaskForm";
-import TaskList from "./TaskList";
-import { tasks as data } from "./tasks"; //as data para cambair el nommbre
+import TaskForm from "./components/TaskForm";
+import TaskList from "./components/TaskList";
+import { tasks as data } from "./data/tasks"; //as data para cambair el nommbre
 import { useEffect, useState } from "react";
 
 function App() {

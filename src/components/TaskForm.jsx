@@ -13,16 +13,21 @@ const TaskForm = ({ createTask }) => {
       title: title,
       description: description,
     });
+    setTitle("")//para restablecer el hooks useState en vacio
+    setDescription("")
   };
   return (
     <form onSubmit={handleSubmit}>
       <input
         placeholder="Escribe tu tarea"
         onChange={(e) => setTitle(e.target.value)}
+        value={title}
+        autoFocus
       />
       <textarea
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Escribe una descripcion de tarea"
+        value={description}
       ></textarea>
       <button>Guardar</button>
     </form>
