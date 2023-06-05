@@ -13,17 +13,26 @@ function App() {
 
   //funcion crearnuevaTask
   function createTask(task) {
-    setTasks([...tasks, {
-      title: task.title,
-      id: tasks.length,
-      description: task.description
-    }]);
+    setTasks([
+      ...tasks,
+      {
+        title: task.title,
+        id: tasks.length,
+        description: task.description,
+      },
+    ]);
+  }
+  //funcion eliminar task
+  function deleteTask(taskId) {
+    //console.log(tasks)
+    //console.log(taskId)
+    setTasks(tasks.filter((task) => task.id !== taskId));
   }
 
   return (
     <>
       <TaskForm createTask={createTask} />
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} deleteTask={deleteTask} />
     </>
   );
 }

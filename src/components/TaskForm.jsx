@@ -8,7 +8,7 @@ const TaskForm = ({ createTask }) => {
     //funcion que ejecuta el form
     event.preventDefault(); //preventDefault para evitar que recargue el navegador
     //console.log(newTask)
-    console.log(title, "-", description);
+    //console.log(title, "-", description);
     createTask({
       title: title,
       description: description,
