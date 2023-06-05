@@ -1,23 +1,22 @@
-import { useState, useContext } from "react";
+import { useContext, useState } from "react";
 import { TaskContext } from "../context/TaskContext";
 
-const TaskForm = ({ createTask }) => {
+const TaskForm = () => {
   const [title, setTitle] = useState(""); //guradmaos el tipeo dl user en un stado
   const [description, setDescription] = useState(""); //guradmaos el tipeo dl user en un stado
-  const valor = useContext(TaskContext)
-  console.log(valor)
+
+  //usamos el contexto importado
+  const {createTask} = useContext(TaskContext) //usamos contexto(nombreDelContx y guradar en una const {destructurando el valor})
 
   const handleSubmit = (event) => {
     //funcion que ejecuta el form
     event.preventDefault(); //preventDefault para evitar que recargue el navegador
-    //console.log(newTask)
-    //console.log(title, "-", description);
     createTask({
       title: title,
       description: description,
     });
-    setTitle("")//para restablecer el hooks useState en vacio
-    setDescription("")
+    setTitle(""); //para restablecer el hooks useState en vacio
+    setDescription("");
   };
   return (
     <form onSubmit={handleSubmit}>
